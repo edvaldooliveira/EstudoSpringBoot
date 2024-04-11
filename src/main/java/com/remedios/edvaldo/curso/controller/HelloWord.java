@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloWord {
 
-
+//Iniciando o Spring Boot
     @GetMapping
     public String olaMundo(){
         return "Edvaldo Ferreira de Oliveira";
