@@ -1,8 +1,7 @@
-package com.remedios.edvaldo.curso.remedio;
+package com.remedios.edvaldo.curso.controller;
 
 import com.remedios.edvaldo.curso.CestaBasica.Cesta;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RemedioRepository extends JpaRepository<Remedio, Long> {
-
+public interface cestaRepositorio extends JpaRepository<Cesta, Long> {
 }
