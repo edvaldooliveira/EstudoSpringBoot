@@ -18,6 +18,7 @@ public class Remedio {
 
 
     public Remedio(DadosCadastroRemidio dados) {
+        this.ativo=true;
         this.nome=dados.nome();
         this.via=dados.via();
         this.lote=dados.lote();
@@ -41,6 +42,8 @@ public class Remedio {
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
 
+    private boolean ativo;
+
 
     public void atualizarInformacoes(@Valid DadosAtualizarRemidio dados) {
         if (dados.nome() != null){
@@ -52,5 +55,9 @@ public class Remedio {
         if (dados.laboratorio()!= null){
             this.laboratorio=dados.laboratorio();
         }
+    }
+
+    public void inativar() {
+        this.ativo=false;
     }
 }
