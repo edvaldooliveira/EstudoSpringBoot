@@ -1,6 +1,7 @@
 package com.remedios.edvaldo.curso.Produtos;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 
 @Table
@@ -11,6 +12,41 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Produtos {
+
+     public void atualizarInformacoes(@Valid dadosUpdateProdutos dados) {
+          if (dados.smartphones() != null){
+               this.smartphones=dados.smartphones();
+          }
+          if (dados.relogios() != null){
+               this.relogios=dados.relogios();
+          }
+          if (dados.notebooks() != null){
+               this.notebooks=dados.notebooks();
+          }
+          if (dados.cadeira() != null){
+               this.cadeira=dados.cadeira();
+          }
+          if (dados.brinquedos() != null){
+               this.brinquedos=dados.brinquedos();
+          }
+          if (dados.perfumes() != null){
+               this.maquiagem=dados.maquiagem();
+          }
+          if (dados.oleo() != null){
+               this.oleo=dados.oleo();
+          }
+          if (dados.cosmeticos() != null){
+               this.cosmeticos=dados.cosmeticos();
+          }
+          if (dados.tapetes() != null){
+               this.tapetes=dados.tapetes();
+          }
+          if (dados.celular() != null){
+               this.celular=dados.celular();
+          }
+
+     }
+
 
 
      public Produtos(dadosCadastrarProdutos dados) {
@@ -43,7 +79,6 @@ public class Produtos {
      private String cosmeticos;
      private String tapetes ;
      private String celular;
-
 
 
 }

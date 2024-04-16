@@ -1,7 +1,10 @@
 package com.remedios.edvaldo.curso.remedio;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
+
+import java.time.LocalDate;
 
 
 @Table(name = "Remedio")
@@ -32,11 +35,22 @@ public class Remedio {
     @Enumerated(EnumType.STRING)
     private via via;
     private String lote;
-    private String quantidade;
-    private String validade;
+    private int quantidade;
+    private LocalDate validade;
 
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
 
 
+    public void atualizarInformacoes(@Valid DadosAtualizarRemidio dados) {
+        if (dados.nome() != null){
+            this.nome=dados.nome();
+        }
+        if (dados.via()!= null){
+            this.via=dados.via();
+        }
+        if (dados.laboratorio()!= null){
+            this.laboratorio=dados.laboratorio();
+        }
+    }
 }

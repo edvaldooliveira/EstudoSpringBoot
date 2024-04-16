@@ -1,4 +1,3 @@
-/*
 create table produtos(
 id bigint not null auto_increment,
 smartphones varchar(100) not null,
@@ -16,4 +15,3 @@ celular varchar(100) not null,
 primary key(id)
 );
 
-*/

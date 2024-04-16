@@ -1,3 +1,4 @@
+/*
 create table cestas(
 id bigint not null auto_increment,rice varchar(100) not null,
 bean varchar(100) not null,
@@ -19,3 +20,4 @@ banana varchar(100) not null,
 milk varchar(100) not null,
 primary key(id)
 );
+*/
