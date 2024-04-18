@@ -58,6 +58,10 @@ public class Remedio {
     }
 
     public void inativar() {
-        this.ativo=false;
+        this.ativo = false;
+    }
+
+    public void reativar() {
+        this.ativo = true;
     }
 }

@@ -15,6 +15,7 @@ import lombok.*;
 public class Cesta {
 
     public Cesta(DadosCadastroCesta dados) {
+        this.ativo = true;
         this.rice=dados.rice();
         this.bean=dados.bean();
         this.oil=dados.oil();
@@ -55,6 +56,8 @@ public class Cesta {
     private String butter;
     private String banana;
     private String milk;
+
+    private boolean ativo;
 
     public void atualizarInformacoes(@Valid DadosUpdateCesta dados) {
         if (dados.rice() != null){
@@ -110,5 +113,9 @@ public class Cesta {
         if (dados.milk() != null){
             this.milk=dados.milk();
         }
+    }
+
+    public void inativar() {
+        this.ativo=false;
     }
 }

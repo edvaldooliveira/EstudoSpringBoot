@@ -25,7 +25,7 @@ public class CestaController {
     }
     @GetMapping
     public List<DadosListagemCesta>listar(){
-       return repositorio.findAll().stream().map(DadosListagemCesta::new).toList();
+       return repositorio.findAllByAtivoTrue().stream().map(DadosListagemCesta::new).toList();
 
     }
 
@@ -34,6 +34,20 @@ public class CestaController {
     public void update(@RequestBody @Valid DadosUpdateCesta dados){
         var cesta = repositorio.getReferenceById(dados.id());
         cesta.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repositorio.deleteById(id);
+    }
+
+    @DeleteMapping("inativar/{id}")
+    @Transactional
+    public void inativar(@PathVariable Long id){
+        var cesta = repositorio.getReferenceById(id);
+        cesta.inativar();
+
 
     }
 
